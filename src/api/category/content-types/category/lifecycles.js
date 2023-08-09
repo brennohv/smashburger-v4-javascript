@@ -1,11 +1,10 @@
 const axios = require('axios');
-const vercelWebhook = strapi.config.get("custom.vercelWebhook");
 
 module.exports = {
-  async afterCreate(event) {
-    vercelWebhook && await axios.default.post(vercelWebhook);
+  afterCreate(event) {
+    axios.default.post("https://api.vercel.com/v1/integrations/deploy/prj_geZkijBwnAOeLd7pxyl6v2BIvnuF/MVNGIPvW2F");
   },
-  async afterUpdate(event) {
-    vercelWebhook && axios.default.post(vercelWebhook);
+  afterUpdate(event) {
+     axios.default.post("https://api.vercel.com/v1/integrations/deploy/prj_geZkijBwnAOeLd7pxyl6v2BIvnuF/MVNGIPvW2F");
   },
 };
